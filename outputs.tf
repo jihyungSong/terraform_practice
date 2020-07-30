@@ -51,3 +51,10 @@ output "vpc2_admin_sg_id" {
 
 }
 
+output "vpc1_alb_dns_name" {
+    value       =       module.vpc1.alb_dns_name
+}
+
+output "vpc2_alb_dns_name" {
+    value       =       module.vpc2.alb_dns_name
+}

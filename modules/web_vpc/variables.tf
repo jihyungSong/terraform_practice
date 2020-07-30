@@ -1,6 +1,6 @@
 variable "aws_region" {
     description =   "AWS Region"
-    default     =   "ap-northeast-1"
+    default     =   "ap-southeast-1"
 }
 
 variable "prefix" {
@@ -18,11 +18,11 @@ variable "vpc_cidr_block" {
 variable "vpc_subnets" {
     default = [
         {
-            availability_zone    =   "ap-northeast-1a",
+            availability_zone    =   "ap-southeast-1a",
             cidr                 =   "10.0.1.0/24",
         },
         {
-            availability_zone    =   "ap-northeast-1c",
+            availability_zone    =   "ap-southeast-1c",
             cidr                 =   "10.0.2.0/24",
         }
     ]

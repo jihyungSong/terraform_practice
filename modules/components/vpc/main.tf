@@ -77,8 +77,13 @@ resource "aws_nat_gateway" "vpc_ngw" {
 
 resource "aws_vpc_endpoint" "s3_endpoint" {
     vpc_id           = aws_vpc.vpc.id
-    service_name     = "com.amazonaws.ap-northeast-1.s3"
+    service_name     = "com.amazonaws.${var.region_name}.s3"
     route_table_ids  = [
         aws_route_table.vpc_rtable.id,
     ]
+    
+    tags = {
+      Name          =   "${var.vpc_prefix}-${var.vpc_name}-endpoint"
+      Managed_by    =   "terraform"
+  }
 }

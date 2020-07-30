@@ -30,3 +30,6 @@ output "vpc_admin_sg_id" {
     value       =       module.vpc_security_group.admin_access_sg_id
 }
 
+output "alb_dns_name" {
+    value       =       module.vpc_elb.alb_dns_name
+}

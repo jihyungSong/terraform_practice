@@ -1,3 +1,5 @@
+variable "region_name" {}
+
 variable "vpc_prefix" {
     description = "VPC Prefix. It will be use VPC/Subnet/RouteTable/ETC name"
 }
@@ -18,11 +20,11 @@ variable "vpc_subnets" {
     }))
     default = [
         {
-            availability_zone =   "ap-northeast-1a",
+            availability_zone =   "ap-southeast-1a",
             cidr              =   "10.0.1.0/24",
         },
         {
-            availability_zone =   "ap-northeast-1c",
+            availability_zone =   "ap-southeast-1c",
             cidr              =   "10.0.2.0/24",
         }
     ]

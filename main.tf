@@ -62,6 +62,7 @@ module "vpc2" {
 module "vpc_peer" {
     source                      =   "./modules/vpc_peer"
 
+    prefix                      =   var.prefix
     requester_vpc_id            =   module.vpc1.vpc_id
     accepter_vpc_id             =   module.vpc2.vpc_id
 
@@ -70,6 +71,9 @@ module "vpc_peer" {
 
     req_vpc_route_table_id      =   module.vpc1.vpc_route_table_id
     acc_vpc_route_table_id      =   module.vpc2.vpc_route_table_id
+    
+    req_vpc_security_group_id   =   module.vpc1.vpc_admin_sg_id
+    acc_vpc_security_group_id   =   module.vpc2.vpc_admin_sg_id
 }
 
 

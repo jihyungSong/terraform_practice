@@ -5,6 +5,7 @@ provider "aws"{
 module "vpc" { 
     source                      =     "../components/vpc"
 
+    region_name                 =     var.aws_region
     vpc_prefix                  =     var.prefix
     vpc_name                    =     var.vpc_name
     vpc_cidr_block              =     var.vpc_cidr_block
