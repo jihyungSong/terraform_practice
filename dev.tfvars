@@ -29,10 +29,10 @@ vpc2_subnets                           = [
 security_group_http_cidr               = ["0.0.0.0/0"]
 security_group_ssh_cidr                = ["0.0.0.0/0"]
 
-launch_template_image_id               = "ami-0cfa3caed4b487e77"
+launch_template_image_id               = "ami-09ec0130fb359d3e9"
 launch_template_instance_type          = "t3.micro"
 launch_template_keypair_name           = "jhsong-tera-key"
-launch_template_userdata_file          = "userdata_ubuntu.sh"
+launch_template_userdata_file          = "userdata.sh"
 
 auto_scaling_group_min_size            = 1
 auto_scaling_group_max_size            = 4

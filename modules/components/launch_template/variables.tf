@@ -17,7 +17,7 @@ variable "security_group_ids" {
 }
 
 variable "userdata_file" {
-    default    =    "userdata_ubuntu.sh"
+    default    =    "userdata.sh"
 }
 
 variable "iam_instance_profile_arn" {}

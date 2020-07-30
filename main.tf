@@ -59,3 +59,17 @@ module "vpc2" {
     desired_capacity            =   var.auto_scaling_group_desired_capacity
 }
 
+module "vpc_peer" {
+    source                      =   "./modules/vpc_peer"
+
+    requester_vpc_id            =   module.vpc1.vpc_id
+    accepter_vpc_id             =   module.vpc2.vpc_id
+
+    requester_vpc_cidr          =   module.vpc1.vpc_cidr
+    accepter_vpc_cidr           =   module.vpc2.vpc_cidr
+
+    req_vpc_route_table_id      =   module.vpc1.vpc_route_table_id
+    acc_vpc_route_table_id      =   module.vpc2.vpc_route_table_id
+}
+
+

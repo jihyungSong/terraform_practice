@@ -18,8 +18,7 @@ output "vpc_subnet_ids" {
     value       =   aws_subnet.subnet.*.id
 }
 
-output "vpc_route_table_ids" {
+output "vpc_route_table_id" {
     description =   "The ID list of route tables for network in this VPC"
-    value       =   aws_route_table.vpc_rtable.*.id
+    value       =   aws_route_table.vpc_rtable.id
 }
-

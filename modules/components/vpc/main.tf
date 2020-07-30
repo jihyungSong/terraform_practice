@@ -82,4 +82,3 @@ resource "aws_vpc_endpoint" "s3_endpoint" {
         aws_route_table.vpc_rtable.id,
     ]
 }
-
