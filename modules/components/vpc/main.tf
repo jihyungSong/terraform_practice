@@ -57,26 +57,6 @@ resource "aws_route_table_association" "vpc_rtable_association" {
     route_table_id  =   aws_route_table.vpc_rtable.id
 }
 
-# NAT gateway
-resource "aws_eip" "eip_ngw" {
-  vpc               =   true
-  tags = {
-      Name          =   "${var.vpc_prefix}-${var.vpc_name}-nat-eip"
-      Managed_by    =   "terraform"
-  }
-}
-
-resource "aws_nat_gateway" "vpc_ngw" {
-
-  allocation_id     =   aws_eip.eip_ngw.id
-  subnet_id         =   aws_subnet.subnet.*.id[0]
-
-  tags = {
-      Name          =   "${var.vpc_prefix}-${var.vpc_name}-nat-gateway"
-      Managed_by    =   "terraform"
-  }
-}
-
 resource "aws_vpc_endpoint" "s3_endpoint" {
     vpc_id           = aws_vpc.vpc.id
     service_name     = "com.amazonaws.${var.region_name}.s3"
