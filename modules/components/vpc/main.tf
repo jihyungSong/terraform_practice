@@ -37,15 +37,17 @@ resource "aws_internet_gateway" "vpc_igw" {
 resource "aws_route_table" "vpc_rtable" {
     vpc_id              =   aws_vpc.vpc.id
 
-    route {
-        cidr_block      =   "0.0.0.0/0"
-        gateway_id      =   aws_internet_gateway.vpc_igw.id
-    }
-
     tags = {
         Name            =   "${var.vpc_prefix}-${var.vpc_name}-rt"
         Managed_by      =   "terraform"
     }
+}
+
+# Route Add
+resource "aws_route" "internet_gateway_route" {
+    route_table_id             =    aws_route_table.vpc_rtable.id
+    destination_cidr_block     =    "0.0.0.0/0"
+    gateway_id                 =    aws_internet_gateway.vpc_igw.id
 }
 
 resource "aws_route_table_association" "vpc_rtable_association" {

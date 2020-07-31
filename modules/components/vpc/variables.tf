@@ -18,15 +18,5 @@ variable "vpc_subnets" {
         availability_zone = string
         cidr              = string
     }))
-    default = [
-        {
-            availability_zone =   "ap-southeast-1a",
-            cidr              =   "10.0.1.0/24",
-        },
-        {
-            availability_zone =   "ap-southeast-1c",
-            cidr              =   "10.0.2.0/24",
-        }
-    ]
 }
 

@@ -19,6 +19,7 @@ module "vpc1" {
     source                      =   "./modules/web_vpc"
 
     prefix                      =   var.prefix
+    aws_region                  =   var.aws_region
     vpc_name                    =   var.vpc1_name
     vpc_cidr_block              =   var.vpc1_cidr_block
     vpc_subnets                 =   var.vpc1_subnets
@@ -41,6 +42,7 @@ module "vpc2" {
     source                      =   "./modules/web_vpc"
 
     prefix                      =   var.prefix
+    aws_region                  =   var.aws_region
     vpc_name                    =   var.vpc2_name
     vpc_cidr_block              =   var.vpc2_cidr_block
     vpc_subnets                 =   var.vpc2_subnets

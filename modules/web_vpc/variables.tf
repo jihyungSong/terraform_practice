@@ -1,6 +1,5 @@
 variable "aws_region" {
     description =   "AWS Region"
-    default     =   "ap-southeast-1"
 }
 
 variable "prefix" {
@@ -16,16 +15,6 @@ variable "vpc_cidr_block" {
 }
 
 variable "vpc_subnets" {
-    default = [
-        {
-            availability_zone    =   "ap-southeast-1a",
-            cidr                 =   "10.0.1.0/24",
-        },
-        {
-            availability_zone    =   "ap-southeast-1c",
-            cidr                 =   "10.0.2.0/24",
-        }
-    ]
     description     =   "Subnet list to use for network to connect to the internet in this VPC"
     type            =   list
 }
